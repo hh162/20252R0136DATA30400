@@ -88,7 +88,7 @@ with torch.no_grad():
 # --------------------------------
 # TF-IDF similarity
 # ---------------------------------
-# Build class keyword docs
+#Build class keyword documentts
 from utils_taxonomy import load_keywords, load_classes
 
 CLASSES_PATH = os.path.join(BASE_DIR, "Amazon_products", "classes.txt")
@@ -114,7 +114,7 @@ probs_tfidf = cosine_similarity(doc_vecs, class_vecs)
 # -------------------------------------
 # Ensemble: weighted average
 # -----------------------------------
-ALPHA = 0.7  # model weight
+ALPHA = 0.7  #model weight
 probs = ALPHA * probs_model + (1 - ALPHA) * probs_tfidf
 
 #------------------------------------
@@ -130,7 +130,7 @@ for i in range(len(probs)):
 #---------------------------------
 predictions = []
 for p in probs:
-    # adaptive k
+    #adaptive k
     if np.max(p) > 0.6:
         top_k = 2
     else:
@@ -139,7 +139,7 @@ for p in probs:
     top_idx = np.argsort(p)[-top_k:]
     labels = set(top_idx.tolist())
 
-    # propagate hierarchy
+    #propagate hierarchy
     for l in list(labels):
         labels.update(get_all_ancestors(l, parents))
 
