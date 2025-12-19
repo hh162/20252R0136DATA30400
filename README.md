@@ -23,5 +23,5 @@ final_project/
 ├── predict.py
 └── run_all.sh
 
-3. Code Run Order (run_all.sh)
+3. Code Run Order (run_all.sh):
    generate_silver_labels.py → train_model.py → predict.py
