@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEST_PATH = os.path.join(BASE_DIR, "Amazon_products", "test", "test_corpus.txt")
 MODEL_PATH = os.path.join(BASE_DIR, "clf.pkl")
 HIERARCHY_PATH = os.path.join(BASE_DIR, "Amazon_products", "class_hierarchy.txt")
-SUBMISSION_PATH = os.path.join(BASE_DIR, "submission.csv")
+SUBMISSION_PATH = os.path.join(BASE_DIR, "2023320328_final.csv")
 
 # --------------------------
 # Load hierarchy
