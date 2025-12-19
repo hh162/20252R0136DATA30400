@@ -62,7 +62,7 @@ silver_labels = []
 
 for i in range(len(train_texts)):
     sims = sim[i]
-    top_idx = np.argsort(sims)[-5:]  # allow more candidates
+    top_idx = np.argsort(sims)[-5:]
     selected = [class_ids[j] for j in top_idx if sims[j] >= 0.35]
 
     #fallback
